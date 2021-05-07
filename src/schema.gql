@@ -1,0 +1,204 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Album {
+  _id: String
+  author(populate: Boolean!): User!
+  code: String
+  date: DateTime
+  description: String
+  pricing(populate: Boolean!): Pricing!
+  thumbnail: String
+  title: String
+}
+
+input AlbumDto {
+  _id: String!
+}
+
+input AlbumsDto {
+  date: DateTime!
+  description: String!
+  title: String!
+}
+
+input CategoriesDto {
+  title: String!
+}
+
+type Category {
+  _id: String
+  author: [User!]!
+  title: String
+}
+
+input CategoryDto {
+  _id: String!
+}
+
+input CreateAlbumDto {
+  code: String
+  date: DateTime!
+  description: String
+  pricing: String!
+  title: String!
+}
+
+input CreateCategoryDto {
+  title: String!
+}
+
+input CreatePackDto {
+  nbProducts: Int!
+  price: Float!
+  title: String!
+}
+
+input CreatePricingDto {
+  price: Float!
+  title: String!
+}
+
+input CreateUserDto {
+  _id: String!
+  email: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input GetSignedUploadURLRequest {
+  albumId: String!
+  filename: String!
+}
+
+type GetSignedUploadURLResponse {
+  filename: String!
+  url: String!
+}
+
+type Mutation {
+  createAlbum(payload: CreateAlbumDto!): Album!
+  createCategory(payload: CreateCategoryDto!): Category!
+  createPack(payload: CreatePackDto!): Pack!
+  createPricing(payload: CreatePricingDto!): Pricing!
+  createUser(payload: CreateUserDto!): User!
+  removeAlbum(payload: RemoveAlbumDto!): Album!
+  removeCategory(payload: RemoveCategoryDto!): Category!
+  removePack(payload: RemovePackDto!): Pack!
+  removePricing(payload: RemovePricingDto!): Pricing!
+  updateAlbum(payload: UpdateAlbumDto!): Album!
+  updateCategory(payload: UpdateCategoryDto!): Category!
+  updatePack(payload: UpdatePackDto!): Pack!
+  updatePricing(payload: UpdatePricingDto!): Pricing!
+}
+
+type Pack {
+  _id: String
+  author: [User!]!
+  nbProducts: Int!
+  price: Float!
+  title: String
+}
+
+input PackDto {
+  _id: String!
+}
+
+input PacksDto {
+  title: String!
+}
+
+type Pricing {
+  _id: String
+  author: [User!]!
+  price: Float!
+  title: String
+}
+
+input PricingDto {
+  _id: String!
+}
+
+input PricingsDto {
+  title: String!
+}
+
+type Query {
+  album(filters: AlbumDto!): Album!
+  albums(filters: AlbumsDto): [Album!]!
+  categories(filters: CategoriesDto): [Category!]!
+  category(filters: CategoryDto!): Category!
+  getSignedUploadURL(request: GetSignedUploadURLRequest!): GetSignedUploadURLResponse!
+  myAlbums(filters: AlbumsDto): [Album!]!
+  myCategories(filters: CategoriesDto): [Category!]!
+  myPacks(filters: PacksDto): [Pack!]!
+  myPricings(filters: PricingsDto): [Pricing!]!
+  pack(filters: PackDto!): Pack!
+  packs(filters: PacksDto): [Pack!]!
+  pricing(filters: PricingDto!): Pricing!
+  pricings(filters: PricingsDto): [Pricing!]!
+  user(filters: UserDto!): User!
+  users(filters: UsersDto): [User!]!
+}
+
+input RemoveAlbumDto {
+  _id: String!
+}
+
+input RemoveCategoryDto {
+  _id: String!
+}
+
+input RemovePackDto {
+  _id: String!
+}
+
+input RemovePricingDto {
+  _id: String!
+}
+
+input UpdateAlbumDto {
+  _id: String!
+  code: String
+  date: DateTime!
+  description: String
+  pricing: String!
+  title: String!
+}
+
+input UpdateCategoryDto {
+  _id: String!
+  title: String!
+}
+
+input UpdatePackDto {
+  _id: String!
+  nbProducts: Int!
+  price: Float!
+  title: String!
+}
+
+input UpdatePricingDto {
+  _id: String!
+  price: Float!
+  title: String!
+}
+
+type User {
+  _id: String!
+  email: String!
+}
+
+input UserDto {
+  email: String!
+  id: String!
+  username: String!
+}
+
+input UsersDto {
+  email: String!
+}

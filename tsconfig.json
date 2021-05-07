@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "incremental": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@album/*": ["src/album/*"],
+      "@category/*": ["src/category/*"],
+      "@cloudinary/*": ["src/cloudinary/*"],
+      "@cognito/*": ["src/cognito/*"],
+      "@common/*": ["src/common/*"],
+      "@graphql/*": ["src/graphql/*"],
+      "@pack/*": ["src/pack/*"],
+      "@photo/*": ["src/photo/*"],
+      "@pricing/*": ["src/pricing/*"],
+      "@s3/*": ["src/s3/*"],
+      "@upload/*": ["src/upload/*"],
+      "@user/*": ["src/user/*"]
+    }
+  }
+}
